@@ -1,8 +1,6 @@
-import { Player } from './domains/player';
-import { Game } from './domains/game';
-import { Enemy } from './domains/enemy';
-import { Orc } from './domains/orc';
 import { RequestString, StringDisplay } from './core/custom-types';
+import { Game } from './domains/game';
+import { Player } from './domains/player';
 
 const callBack: StringDisplay = (mess: string) => console.log(mess);
 const requestString: RequestString = (mess: string) => prompt(mess);
@@ -20,3 +18,11 @@ const player = new Player(pseudo);
 const game = new Game(player, callBack, requestString);
 game.init();
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tap-target');
+    var instances = MO.TapTarget.init(elems);
+
+    instances[0].open();
+  });

@@ -1,4 +1,4 @@
-import { Arme, AvecPuissance, afficherPuissance } from './arme';
+import { Arme, AvecPuissance, afficherPuissance } from '../domains/arme';
 
 export function afficherText(test: unknown): void {
     if (typeof test === 'string') {
@@ -19,6 +19,6 @@ afficherPuissance(arme);
 afficherPuissance(arc);
 afficherPuissance({ puissance: 50 });
 
-import { Orc } from './orc';
+import { Orc } from '../domains/orc';
 
-const orc = new Orc('orcccK', 'MECHANT');
+// const orc = new Orc('orcccK', 'MECHANT');
