@@ -6,7 +6,7 @@
   "scripts": {
     "vite": "vite",
     "tsc": "tsc",
-    "prestart": "npm run tsc -- --noEmit --watch",
+    "check": "npm run tsc -- --noEmit --watch",
     "start": "npm run vite",
     "build:prod": "npm run tsc && npm run vite -- build",
     "preview:prod": "npm run vite -- preview"
