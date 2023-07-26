@@ -3,6 +3,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import { TapTarget, Dropdown } from 'materialize-css';
 import { Player } from './domains/models/player';
 import { Game } from './domains/models/game';
+import { getCharacters, getCharactersDto } from './infrastructure/characters-infra';
 
 const callBack: StringDisplay = (mess: string) => console.log(mess);
 const requestString: RequestString = (mess: string) => prompt(mess);
@@ -36,20 +37,5 @@ document.addEventListener('DOMContentLoaded', function() {
     id: number
   }
 
-  function getTokenAsBearer(token: string) {
-    return {
-      Authentification: `Bearer ${token}`
-    }
-  }
-
-  function getRequestHeaders(): RequestInit {
-    return {
-      headers: getTokenAsBearer('V9Xg-B36qVycrEUUbtVd')
-    };
-  }
-
-  async function getCharacters(): Promise<People[]> {
-    const url = 'https://the-one-api.dev/v2/character';
-    const response = await fetch(url, getRequestHeaders());
-    return await response.json();
-  }
+  const people = await getCharactersDto(getCharacters);
+  console.info(people);
