@@ -1,4 +1,4 @@
-import { Arme, AvecPuissance, afficherPuissance } from '../domains/arme';
+import { Arme, AvecPuissance, afficherPuissance } from '../domains/models/arme';
 
 export function afficherText(test: unknown): void {
     if (typeof test === 'string') {

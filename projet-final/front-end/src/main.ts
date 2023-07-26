@@ -1,9 +1,8 @@
 import { RequestString, StringDisplay } from './core/custom-types';
-import { Game } from './domains/game';
-import { Player } from './domains/player';
-
 import 'materialize-css/dist/css/materialize.min.css';
 import { TapTarget, Dropdown } from 'materialize-css';
+import { Player } from './domains/models/player';
+import { Game } from './domains/models/game';
 
 const callBack: StringDisplay = (mess: string) => console.log(mess);
 const requestString: RequestString = (mess: string) => prompt(mess);
@@ -32,3 +31,25 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instancesDropDowns = Dropdown.init(elems, {});
   });
+
+  type People = {
+    id: number
+  }
+
+  function getTokenAsBearer(token: string) {
+    return {
+      Authentification: `Bearer ${token}`
+    }
+  }
+
+  function getRequestHeaders(): RequestInit {
+    return {
+      headers: getTokenAsBearer('V9Xg-B36qVycrEUUbtVd')
+    };
+  }
+
+  async function getCharacters(): Promise<People[]> {
+    const url = 'https://the-one-api.dev/v2/character';
+    const response = await fetch(url, getRequestHeaders());
+    return await response.json();
+  }

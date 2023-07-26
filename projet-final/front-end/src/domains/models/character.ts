@@ -1,4 +1,4 @@
-import { StringDisplay } from "../core/custom-types";
+import { StringDisplay } from "../../core/custom-types";
 
 /**
  * Classe abstraite représentant un personnage

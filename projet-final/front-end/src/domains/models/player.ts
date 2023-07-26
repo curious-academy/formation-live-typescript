@@ -1,4 +1,4 @@
-import { StringOrNull } from '../core/custom-types';
+import { StringOrNull } from '../../core/custom-types';
 
 /**
  * Classe représentant un joueur

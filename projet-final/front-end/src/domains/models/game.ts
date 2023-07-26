@@ -1,4 +1,4 @@
-import { RequestString, StringDisplay } from "../core/custom-types";
+import { RequestString, StringDisplay } from "../../core/custom-types";
 import { Player } from "./player";
 
 /**
