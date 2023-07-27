@@ -23,19 +23,16 @@ game.init();
 
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.tap-target');
-    var instances = TapTarget.init(elems);
+    let elems = document.querySelectorAll('.tap-target');
+    const instances = TapTarget.init(elems);
 
     instances[0].open();
 
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instancesDropDowns = Dropdown.init(elems, {});
+    elems = document.querySelectorAll('.dropdown-trigger');
+    Dropdown.init(elems, {});
   });
-
-  type People = {
-    id: number
-  }
 
   const people = await getCharactersDto(getCharacters);
   console.info(people);

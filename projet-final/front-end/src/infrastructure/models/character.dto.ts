@@ -1,4 +1,3 @@
-import { getCharacters } from "../characters-infra";
 import { ApiResultCharacterRace } from "./character";
 
 /**

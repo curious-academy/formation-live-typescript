@@ -1,22 +1,22 @@
-import { Player } from './domains/player';
-import { Game } from './domains/game';
-import { Enemy } from './domains/enemy';
-import { Orc } from './domains/orc';
-import { RequestString, StringDisplay } from './core/custom-types';
+interface Hobbit {
+    name: string;
+    age: number;
+}
 
-const callBack: StringDisplay = (mess: string) => console.log(mess);
-const requestString: RequestString = (mess: string) => prompt(mess);
+type ListAttributs = keyof Hobbit;
+const attribut: ListAttributs = 'age';
 
-// const enemies: Enemy[] = [
-//     new Orc('orcccK', 'MECHANT', callBack),
-//     new Orc('orcccK', 'MECHANT', (mess: any) => {
-//         callBack(mess.toLowerCase());
-//     }),
-// ]
+// function search(obj: Hobbit, key: ListAttributs, value: unknown): boolean {
+//     return obj[key] === value;
+// }
 
-const pseudo = requestString('Quel est ton prénom ?');
-const player = new Player(pseudo);
+function search<Type>(obj: Type, key: keyof Type, value: unknown): boolean {
+    return obj[key] === value;
+}
 
-const game = new Game(player, callBack, requestString);
-game.init();
+search({ name: 'Frodon', age: 33 }, 'age', 'Frodon');
 
+const frodo: Hobbit = {
+    name: 'Frodon',
+    age: 33
+};

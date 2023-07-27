@@ -3,6 +3,6 @@ import { Character } from "./character";
 
 export class Hobbit extends Character {
     manger(nourriture: Nourriture) {
-        console.info("Miam miam ! " + nourriture.pointsDeVie + " points de vie !");
+        this.afficher("Miam miam ! " + nourriture.pointsDeVie + " points de vie !");
     }
 }
