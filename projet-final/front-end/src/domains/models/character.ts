@@ -1,4 +1,5 @@
 import { StringDisplay } from "../../core/custom-types";
+import { log } from "../../core/decorators/loggers";
 import { Life } from "./life";
 
 /**
@@ -8,6 +9,7 @@ export abstract class Character {
     constructor(private _name: string, private life: Life, protected afficher: StringDisplay) {
     }
 
+    @log()
     attack(character: Character): void {
         this.afficher(`${this.name} attaque ${character.name}`);
         

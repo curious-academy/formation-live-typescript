@@ -4,6 +4,7 @@ import { TapTarget, Dropdown } from 'materialize-css';
 import { Player } from './domains/models/player';
 import { Game } from './domains/models/game';
 import { getCharacters, getCharactersDto } from './infrastructure/characters-infra';
+import { Hobbit } from './domains/models/hobbit';
 
 const callBack: StringDisplay = (mess: string) => console.log(mess);
 const requestString: RequestString = (mess: string) => prompt(mess);
@@ -15,24 +16,28 @@ const requestString: RequestString = (mess: string) => prompt(mess);
 //     }),
 // ]
 
-const pseudo = requestString('Quel est ton prénom ?');
-const player = new Player(pseudo);
+const frodo = new Hobbit('Frodo', { points: 100 }, callBack);
+frodo.attack(frodo);
 
-const game = new Game(player, callBack, requestString);
-game.init();
+// TODO: à décommenter après le 27/07/2023
+// const pseudo = requestString('Quel est ton prénom ?');
+// const player = new Player(pseudo);
+
+// const game = new Game(player, callBack, requestString);
+// game.init();
 
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    let elems = document.querySelectorAll('.tap-target');
-    const instances = TapTarget.init(elems);
+// document.addEventListener('DOMContentLoaded', function() {
+//     let elems = document.querySelectorAll('.tap-target');
+//     const instances = TapTarget.init(elems);
 
-    instances[0].open();
+//     instances[0].open();
 
-    elems = document.querySelectorAll('.dropdown-trigger');
-    Dropdown.init(elems, {});
-  });
+//     elems = document.querySelectorAll('.dropdown-trigger');
+//     Dropdown.init(elems, {});
+//   });
 
-  const people = await getCharactersDto(getCharacters);
-  console.info(people);
+//   const people = await getCharactersDto(getCharacters);
+//   console.info(people);

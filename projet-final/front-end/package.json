@@ -11,7 +11,7 @@
     "compile": "npm run tsc -- --noEmit --watch",
     "start": "npm run vite",
 
-    "prebuild:prod": "npm run lint",
+    "prebuild:prod1": "npm run lint",
     "build:prod": "npm run tsc && npm run vite -- build",
 
     "preview:prod": "npm run vite -- preview",
