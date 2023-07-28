@@ -1,9 +1,17 @@
-// type Nullable<T> = T | null;
+/**
+ * Type représentant une valeur ou null
+ */
+export type Nullable<T> = T | null;
+
+/**
+ * Type représentant une valeur ou undefined 
+ */
+export type Undefineable<T> = T | undefined;
 
 /**
  * Type représentant une chaine de caractères ou null
  */
-export type StringOrNull = string | null;
+export type StringOrNull = Nullable<string>;
 
 /**
  * Type représentant une fonction qui affiche un message

@@ -1,5 +1,11 @@
 import { ArrayList, RequestString, StringDisplay, StringOrNull } from '../../core/custom-types';
 import { Game, GameList, createGame } from './game';
+import { Undefineable } from '../../core/custom-types';
+
+/**
+ * Type représentant un joueur ou undefined
+ */
+export type PlayerOrUndefined = Undefineable<Player>;
 
 /**
  * Classe représentant un joueur
