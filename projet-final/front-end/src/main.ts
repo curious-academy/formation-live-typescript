@@ -5,10 +5,23 @@ import { GamePlay } from './domains/models/game-play';
 const callBack: StringDisplay = (mess: string) => console.log(mess);
 const requestString: RequestString = (mess: string) => prompt(mess);
 
-
 const gamePlay = new GamePlay(callBack, requestString);
 
-gamePlay.startNewGame();
+
+const buttonInitPlayer = document.getElementById('btnCreatePlayer');
+const buttonStartGame = document.getElementById('btnStartGame');
+
+if (buttonInitPlayer) {
+    buttonInitPlayer.addEventListener('click', () => {
+        gamePlay.createPlayer();
+    });
+}
+
+if (buttonStartGame) {
+    buttonStartGame.addEventListener('click', () => {
+        gamePlay.startNewGame();
+    });
+}
 
 
 

@@ -7,33 +7,10 @@
     <title>Seigneur des anneaux - Un jeu épique </title>
   </head>
   <body>
-<!-- Element Showed -->
-<a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a>
-
-<!-- Tap Target Structure -->
-<div class="tap-target" data-target="menu">
-  <div class="tap-target-content">
-    <h5>Title</h5>
-    <p>A bunch of text</p>
-  </div>
-</div>
-
-
-
-  <!-- Dropdown Trigger -->
-  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">three</a></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-  </ul>
-
-    <div id="app"></div>
+    <div id="app" class="container">
+      <button id="btnCreatePlayer" class="btn waves-effect waves-light" type="button" name="action">Create player</button>
+      <button id="btnStartGame" class="btn waves-effect waves-light" type="button" name="action">Start game</button>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
