@@ -52,4 +52,30 @@ afficherPuissance({ puissance: 50 });
 // }
 
 
-//type PartialNazgul = Partial<Nazgul>;
+type PersonName = 'Legolas' | 'Gimli' | 'Aragorn';
+type OtherDetails = {
+    age: number;
+    taille: number;
+}
+type InformationPerson = PersonName | OtherDetails;
+
+type Person = {
+    info: InformationPerson;
+    infoSecondaire: InformationPerson;
+}
+
+const person = {
+    info: 'Legolas',
+    infoSecondaire: {
+        age: 100,
+        taille: 1.80
+    }
+} satisfies Person;
+
+person.info.charAt(0);
+
+
+
+// if (typeof person.info === 'string') {
+//     console.log(person.info.toUpperCase());
+// }

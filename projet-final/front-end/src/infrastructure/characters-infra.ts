@@ -15,12 +15,12 @@ function getTokenAsBearer(token: string): HeadersInit {
 
 function getRequestHeaders(): RequestInit {
   return {
-    headers: getTokenAsBearer('V9Xg-B36qVycrEUUbtVd')
+    headers: getTokenAsBearer(import.meta.env.VITE_BEARER_TOKEN)
   };
 }
 
 export async function getCharacters(): Promise<CharactersApiResult> {
-  const url = 'https://the-one-api.dev/v2/character';
+  const url = import.meta.env.VITE_CHARACTERS_API_URL;
   const response = await fetch(url, getRequestHeaders());
   return await response.json();
 }
