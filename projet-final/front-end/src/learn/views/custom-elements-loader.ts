@@ -1,3 +1,4 @@
+import PlayerDiv from "./player-div";
 import PopupInfo from "./popup-info";
 
 /**
@@ -10,5 +11,6 @@ export class CustomElementsLoader {
      */
     load(): void {
         customElements.define('popup-info', PopupInfo);
+        customElements.define('player-div', PlayerDiv);
     }
 }
