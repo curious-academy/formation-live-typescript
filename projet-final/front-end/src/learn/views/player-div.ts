@@ -24,7 +24,7 @@ class PlayerDiv extends HTMLElement {
                 width: ${this.with}px;
                 height: ${this.height}px;
                 background-image: url(${this.image});
-                background-size: cover;
+                background-size: ${this.with}px ${this.height}px;
                 background-position: center;
             }
         `;
